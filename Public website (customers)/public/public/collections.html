@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Collections | SANJAY JEWELLERS — Gold, Diamond, Bridal & Silver</title>
+  <meta name="description" content="Explore handcrafted 22K gold necklaces, certified diamond rings, bridal sets, and 925 silver at SANJAY JEWELLERS. Available for viewing at our counter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="collections">
+
+  <!-- 1. Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="top-bar-content">
+      <span class="top-bar-item"><span class="top-bar-diamond">✦</span> 100% BIS 916 Hallmarked Gold &amp; Certified Natural Diamonds</span>
+      <span class="top-bar-item"><span class="top-bar-diamond">✦</span> Showroom Visits &amp; Custom Orders Welcome</span>
+      <span class="top-bar-item"><span class="top-bar-diamond">✦</span> Mon - Sun: 10:30 AM - 8:30 PM</span>
+    </div>
+  </div>
+
+  <!-- 2. Daily Metal Rates Ticker -->
+  <div class="rates-strip" aria-label="Daily Indicative Metal Rates">
+    <div class="container">
+      <div class="rates-wrapper">
+        <span class="rates-label"><span class="rate-dot"></span> Today's Metal Rates:</span>
+        <span class="rate-badge">Gold 24K (999): <strong>₹7,850/g</strong></span>
+        <span class="rate-badge">Gold 22K (916): <strong>₹7,200/g</strong></span>
+        <span class="rate-badge">Gold 18K (750): <strong>₹5,890/g</strong></span>
+        <span class="rate-badge">Silver 999: <strong>₹96/g</strong></span>
+        <span class="rate-badge" style="color: var(--muted-on-dark);">Rates indicative · <span id="rate-timestamp">Today</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Site Header & Luxury Navigation -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="SANJAY JEWELLERS Home">
+        <svg class="brand-mark" viewBox="0 0 88 88" aria-hidden="true">
+          <defs>
+            <linearGradient id="colGold2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f7e6b8"/>
+              <stop offset="50%" stop-color="#c9a24a"/>
+              <stop offset="100%" stop-color="#8a6822"/>
+            </linearGradient>
+          </defs>
+          <polygon points="44,8 74,32 64,78 24,78 14,32" fill="none" stroke="url(#colGold2)" stroke-width="2.5"/>
+          <polygon points="44,20 62,44 44,70 26,44" fill="url(#colGold2)"/>
+        </svg>
+        <div class="brand-text">
+          <span class="brand-name">SANJAY JEWELLERS</span>
+          <span class="brand-subtitle">Fine Jewellery House</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu ☰
+      </button>
+
+      <nav class="nav" id="site-nav" aria-label="Primary Navigation">
+        <a href="index.html">Home</a>
+        <a class="is-active" href="collections.html">Collections</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-actions">
+          <a class="nav-cta" href="../../Admin_dashboard/public/login.html" title="Authorised staff desk access">Staff Portal</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 4. Page Hero -->
+  <section class="page-hero" aria-label="Collections Introduction">
+    <div class="container">
+      <p class="eyebrow" style="justify-content: center;">Handcrafted Catalogue</p>
+      <h1>Showroom Collections</h1>
+      <p>
+        Explore hallmarked 22K gold, certified diamonds, and sterling silver. Each piece is crafted for enduring beauty, certified authenticity, and heirloom celebrations.
+      </p>
+    </div>
+  </section>
+
+  <!-- 5. Filter Tabs & Products Grid -->
+  <section class="section">
+    <div class="container">
+      <!-- Interactive Filter Tabs -->
+      <div class="filter-tabs">
+        <button class="filter-btn is-active" type="button" data-filter="all">All Pieces (8)</button>
+        <button class="filter-btn" type="button" data-filter="gold">22K Gold</button>
+        <button class="filter-btn" type="button" data-filter="diamond">Diamonds</button>
+        <button class="filter-btn" type="button" data-filter="bridal">Bridal &amp; Festive</button>
+        <button class="filter-btn" type="button" data-filter="silver">925 Silver</button>
+      </div>
+
+      <!-- Product Cards -->
+      <div class="cards">
+        <!-- 1. Gold Necklace -->
+        <article class="card" data-category="gold">
+          <div class="card-media">
+            <span class="card-purity">22K BIS 916</span>
+            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=800&q=80" alt="Royal Guluband Gold Necklace" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Gold · Royal Edit</span>
+            <h3>Royal Guluband Choker</h3>
+            <p>Intricate jaali craftsmanship in 22K yellow gold with lustrous pearl hangings.</p>
+            <div class="card-footer">
+              <span class="card-specs">Net: ~38.50g · 22K</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Diamond Solitaire -->
+        <article class="card" data-category="diamond">
+          <div class="card-media">
+            <span class="card-purity">Certified Diamond</span>
+            <img src="https://images.unsplash.com/photo-1605100804763-247f83b82c5d?auto=format&fit=crop&w=800&q=80" alt="Diamond Solitaire Ring" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Diamond · Solitaire</span>
+            <h3>Eternal Solitaire Ring</h3>
+            <p>VVS-VS clarity certified round diamond mounted in a four-prong 18K gold setting.</p>
+            <div class="card-footer">
+              <span class="card-specs">1.02 ct · 18K Gold</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Bridal Set -->
+        <article class="card" data-category="bridal">
+          <div class="card-media">
+            <span class="card-purity">Bridal Heritage</span>
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=800&q=80" alt="Complete Bridal Gold Set" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bridal · Complete Set</span>
+            <h3>Padmavati Bridal Set</h3>
+            <p>Grand necklace, matching earrings, maang tikka, and kadas for royal wedding ceremonies.</p>
+            <div class="card-footer">
+              <span class="card-specs">Net: ~110.40g · 22K</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. Silver Ornaments -->
+        <article class="card" data-category="silver">
+          <div class="card-media">
+            <span class="card-purity">925 Sterling</span>
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=800&q=80" alt="Sterling Silver Bracelet and Chain" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Silver · Modern Edit</span>
+            <h3>Anant Sterling Chain</h3>
+            <p>High-polish 925 hallmarked sterling silver daily wear chain with secure lock.</p>
+            <div class="card-footer">
+              <span class="card-specs">Net: ~24.00g · 925</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Gold Bangles -->
+        <article class="card" data-category="gold">
+          <div class="card-media">
+            <span class="card-purity">22K BIS 916</span>
+            <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=800&q=80" alt="Handcrafted Gold Bangles" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Gold · Bangles</span>
+            <h3>Mayur Antique Kadas</h3>
+            <p>Peacock embossed heritage gold kadas with floral engravings and antique patina.</p>
+            <div class="card-footer">
+              <span class="card-specs">Net: ~45.20g (Pair)</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Diamond Pendant -->
+        <article class="card" data-category="diamond">
+          <div class="card-media">
+            <span class="card-purity">Certified Diamond</span>
+            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80" alt="Diamond Pendant with Gold Chain" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Diamond · Pendant</span>
+            <h3>Starlight Diamond Pendant</h3>
+            <p>Cluster set natural diamonds forming a radiant star medallion in 18K gold.</p>
+            <div class="card-footer">
+              <span class="card-specs">0.65 ct · 18K Gold</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Bridal Rani Haar -->
+        <article class="card" data-category="bridal">
+          <div class="card-media">
+            <span class="card-purity">22K BIS 916</span>
+            <img src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=800&q=80" alt="Long Bridal Rani Haar" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Bridal · Rani Haar</span>
+            <h3>Devangana Rani Haar</h3>
+            <p>Traditional multi-strand long necklace with detailed temple motifs and emerald highlights.</p>
+            <div class="card-footer">
+              <span class="card-specs">Net: ~64.80g · 22K</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Silver Earrings -->
+        <article class="card" data-category="silver">
+          <div class="card-media">
+            <span class="card-purity">925 Sterling</span>
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=800&q=80" alt="Silver Jhumkas with Pearls" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">Silver · Jhumkas</span>
+            <h3>Chandrakala Jhumkas</h3>
+            <p>Oxidised 925 silver traditional bells with seed pearl drops and push-back clasps.</p>
+            <div class="card-footer">
+              <span class="card-specs">Net: ~18.80g · 925</span>
+              <a class="card-enquire" href="contact.html">Enquire →</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Counter Notice Strip -->
+  <section class="section section-emerald" style="padding: 3.5rem 0;">
+    <div class="container" style="text-align: center;">
+      <p class="eyebrow eyebrow-dark" style="justify-content: center;">Showroom Services</p>
+      <h2 class="section-title section-title-dark" style="font-size: 2rem;">Custom Jewellery &amp; Special Weighing</h2>
+      <p style="color: var(--muted-on-dark); max-width: 620px; margin: 0.8rem auto 1.8rem;">
+        Looking for custom bridal designs, family heirloom restorations, or bullion investment coins? Visit our showroom counter for private viewing.
+      </p>
+      <a class="btn btn-gold" href="contact.html">Plan a Showroom Visit</a>
+    </div>
+  </section>
+
+  <!-- 7. Luxury Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html" style="margin-bottom: 0.8rem;">
+            <svg class="brand-mark" viewBox="0 0 88 88" aria-hidden="true">
+              <polygon points="44,8 74,32 64,78 24,78 14,32" fill="none" stroke="#c9a24a" stroke-width="2.5"/>
+              <polygon points="44,20 62,44 44,70 26,44" fill="#c9a24a"/>
+            </svg>
+            <div class="brand-text">
+              <span class="brand-name">SANJAY JEWELLERS</span>
+              <span class="brand-subtitle">Fine Jewellery House</span>
+            </div>
+          </a>
+          <p class="footer-copy">
+            A trusted jewellery house providing BIS hallmarked gold, certified diamonds, and sterling silver. Billed with precision and integrity.
+          </p>
+          <div class="footer-badge">
+            <span>✦ BIS 916 Assayed Purity</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Showroom Home</a></li>
+            <li><a href="collections.html">All Collections</a></li>
+            <li><a href="about.html">About the House</a></li>
+            <li><a href="contact.html">Visit &amp; Contact</a></li>
+            <li><a href="../../Admin_dashboard/public/login.html">Staff Login</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Showroom Collections</h4>
+          <ul class="footer-links">
+            <li><a href="collections.html">22K Gold Jewellery</a></li>
+            <li><a href="collections.html">Diamond Solitaires</a></li>
+            <li><a href="collections.html">Bridal Chokers &amp; Sets</a></li>
+            <li><a href="collections.html">925 Sterling Silver</a></li>
+            <li><a href="collections.html">Daily Wear Tops &amp; Rings</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-contact">
+          <h4>Showroom Hours</h4>
+          <p><strong>Monday - Sunday:</strong><br>10:30 AM to 8:30 PM</p>
+          <p><strong>Assistance Desk:</strong><br>Enquiries &amp; Custom Orders via Contact</p>
+          <p><strong>Admin Desk:</strong><br><a href="../../Admin_dashboard/public/login.html" style="color: var(--gold-light); text-decoration: underline;">Staff Portal Login</a></p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 SANJAY JEWELLERS. All rights reserved. BIS Hallmarked Gold &amp; Certified Diamonds.</p>
+        <p>Confidential staff access: <a href="../../Admin_dashboard/public/login.html">Portal Login</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

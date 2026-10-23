@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | SANJAY JEWELLERS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="page">
+    <div class="glow glow-left" aria-hidden="true"></div>
+    <div class="glow glow-right" aria-hidden="true"></div>
+    <div class="velvet" aria-hidden="true"></div>
+    <div class="gold-mesh" aria-hidden="true"></div>
+    <span class="spark spark-1" aria-hidden="true"></span>
+    <span class="spark spark-2" aria-hidden="true"></span>
+    <span class="spark spark-3" aria-hidden="true"></span>
+    <span class="spark spark-4" aria-hidden="true"></span>
+
+    <main class="frame">
+      <div class="frame-inner">
+        <!-- Left Brand Showcase -->
+        <section class="brand-side" aria-label="Jewellery house presentation">
+          <div class="crest" aria-hidden="true">
+            <svg viewBox="0 0 88 88" role="img">
+              <defs>
+                <linearGradient id="goldFill" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#f8e7bb"/>
+                  <stop offset="45%" stop-color="#d4af67"/>
+                  <stop offset="100%" stop-color="#8d6b2d"/>
+                </linearGradient>
+              </defs>
+              <polygon points="44,6 78,30 66,78 22,78 10,30" fill="none" stroke="url(#goldFill)" stroke-width="1.6"/>
+              <polygon points="44,16 68,32 60,70 28,70 20,32" fill="url(#goldFill)" opacity="0.18"/>
+              <polygon points="44,18 62,44 44,70 26,44" fill="url(#goldFill)"/>
+              <polygon points="44,18 62,44 44,36" fill="#fff6d8" opacity="0.55"/>
+            </svg>
+          </div>
+
+          <p class="eyebrow">Fine Jewellery House</p>
+          <h1>SANJAY<br>JEWELLERS</h1>
+          <p class="tagline">Gold &nbsp;·&nbsp; Diamond &nbsp;·&nbsp; Silver</p>
+
+          <div class="ornament" aria-hidden="true">
+            <span></span>
+            <i></i>
+            <span></span>
+          </div>
+
+          <p class="brand-copy">
+            A private counter for billing, stock, and daily shop operations —
+            crafted with the same care as the jewellery itself.
+          </p>
+
+          <ul class="highlights">
+            <li>Secure admin access</li>
+            <li>Barcode billing ready</li>
+            <li>Live stock &amp; invoices</li>
+          </ul>
+        </section>
+
+        <!-- Right Login Form -->
+        <section class="form-side" aria-label="Staff login">
+          <p class="panel-kicker">Staff Portal</p>
+          <h2>Welcome back</h2>
+          <p class="form-note">Sign in to the SANJAY JEWELLERS management desk.</p>
+
+          <form id="login-form" class="login-form" novalidate>
+            <div class="field">
+              <label for="username">Username</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 12a4.5 4.5 0 1 0-4.5-4.5A4.5 4.5 0 0 0 12 12Zm0 1.8c-3.4 0-7.2 1.7-7.2 4.2V20h14.4v-2c0-2.5-3.8-4.2-7.2-4.2Z"/></svg>
+                </span>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  autocomplete="username"
+                  placeholder="Enter username"
+                  required
+                >
+              </div>
+              <p class="field-error" id="username-error" hidden>Username zaroori hai.</p>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <div class="input-shell">
+                <span class="input-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M17 10h-1V8a4 4 0 0 0-8 0v2H7a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1Zm-7-2a2 2 0 0 1 4 0v2h-4Z"/></svg>
+                </span>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  autocomplete="current-password"
+                  placeholder="Enter password"
+                  required
+                >
+                <button type="button" class="toggle-password" id="toggle-password" aria-label="Show password">
+                  Show
+                </button>
+              </div>
+              <p class="field-error" id="password-error" hidden>Password zaroori hai.</p>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <span>Sign In</span>
+            </button>
+            <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page-footer">
+      <p>&copy; 2026 SANJAY JEWELLERS. All rights reserved.</p>
+      <p>Confidential staff access</p>
+    </footer>
+  </div>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

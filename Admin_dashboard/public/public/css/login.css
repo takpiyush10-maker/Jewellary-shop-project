@@ -1,0 +1,720 @@
+/* ==========================================================================
+   SANJAY JEWELLERS — Admin Portal Login Styles
+   Theme: Royal Velvet & Regal Gold Luxury
+   ========================================================================== */
+
+:root {
+  /* Core Luxury Palette */
+  --velvet: #0c0a08;
+  --velvet-deep: #070605;
+  --velvet-card: #120f0c;
+  --charcoal: #1a1612;
+  --charcoal-light: #25201a;
+  --charcoal-border: #332b22;
+
+  /* Gold & Metallic Palette */
+  --gold-pale: #fff6d8;
+  --gold-bright: #f3d78b;
+  --gold: #d4af67;
+  --gold-medium: #b8893a;
+  --gold-deep: #8d6b2d;
+  --champagne: #ead7b0;
+  --champagne-light: #f4ead8;
+  --ivory: #fff8ec;
+
+  /* Typography Colors */
+  --ink: #fff8ec;
+  --ink-secondary: #e2d7c5;
+  --muted: #8d8272;
+  --muted-light: #b0a494;
+
+  /* Feedback Colors */
+  --danger: #e55353;
+  --danger-bg: rgba(229, 83, 83, 0.12);
+  --danger-border: rgba(229, 83, 83, 0.35);
+  --success: #4ecb8d;
+  --success-bg: rgba(78, 203, 141, 0.12);
+  --success-border: rgba(78, 203, 141, 0.35);
+
+  /* Typography Families */
+  --font-serif: "Cinzel", "Cormorant Garamond", Georgia, serif;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   CSS Reset & Base
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--font-sans);
+  color: var(--ink);
+  background: var(--velvet);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   Page Layout & Background
+   -------------------------------------------------------------------------- */
+.page {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 1.5rem 1.5rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Background Atmosphere */
+.velvet {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 18% 20%, rgba(212, 175, 103, 0.22), transparent 36%),
+    radial-gradient(ellipse at 82% 78%, rgba(243, 215, 139, 0.14), transparent 32%),
+    linear-gradient(160deg, #090806 0%, #17130f 48%, #241c14 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.velvet::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.18;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cpath d='M110 18c18 28 42 42 74 46-32 4-56 18-74 46-18-28-42-42-74-46 32-4 56-18 74-46Z' fill='none' stroke='%23b8893a' stroke-width='1'/%3E%3Ccircle cx='110' cy='110' r='7' fill='none' stroke='%23c9a24a' stroke-width='0.8'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  pointer-events: none;
+}
+
+.gold-mesh {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(212, 175, 103, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(212, 175, 103, 0.18) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 25%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at center, black 25%, transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(85px);
+  z-index: 0;
+}
+
+.glow-left {
+  top: -12%;
+  left: -8%;
+  width: 520px;
+  height: 520px;
+  background: radial-gradient(circle, rgba(212, 175, 103, 0.22) 0%, transparent 68%);
+}
+
+.glow-right {
+  bottom: -15%;
+  right: -8%;
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle, rgba(141, 107, 45, 0.28) 0%, transparent 70%);
+}
+
+/* Ambient Diamond Sparks */
+.spark {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, var(--gold-pale), var(--gold));
+  transform: rotate(45deg);
+  box-shadow: 0 0 16px rgba(243, 215, 139, 0.75);
+  animation: twinkle 3.8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spark-1 { top: 12%; left: 14%; animation-delay: 0s; }
+.spark-2 { top: 18%; right: 14%; animation-delay: 0.9s; }
+.spark-3 { bottom: 18%; left: 18%; animation-delay: 1.5s; }
+.spark-4 { bottom: 12%; right: 12%; animation-delay: 2.2s; }
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: rotate(45deg) scale(0.7);
+  }
+  50% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1.15);
+    box-shadow: 0 0 20px rgba(243, 215, 139, 0.95);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Jewellery Card Frame
+   -------------------------------------------------------------------------- */
+.frame {
+  width: 100%;
+  max-width: 1040px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  padding: 2px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8e7bb 0%, #b8893a 28%, #f3d78b 52%, #8d6b2d 76%, #ead7b0 100%);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(212, 175, 103, 0.35),
+    0 0 45px rgba(212, 175, 103, 0.15);
+}
+
+/* Ornamental Corner Accent Borders */
+.frame::before,
+.frame::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border: 1.5px solid rgba(243, 215, 139, 0.7);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.frame::before {
+  top: -4px;
+  left: -4px;
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.frame::after {
+  right: -4px;
+  bottom: -4px;
+  border-left: 0;
+  border-top: 0;
+}
+
+.frame-inner {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  min-height: 620px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #100e0b;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 74, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   Left Panel: Brand Showcase
+   -------------------------------------------------------------------------- */
+.brand-side,
+.brand-panel {
+  position: relative;
+  padding: 3.8rem 3.4rem;
+  color: var(--ivory);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 26% 22%, rgba(243, 215, 139, 0.18), transparent 42%),
+    linear-gradient(165deg, rgba(32, 24, 16, 0.88) 0%, rgba(12, 10, 8, 0.96) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cpath d='M80 8 L92 68 L152 80 L92 92 L80 152 L68 92 L8 80 L68 68 Z' fill='none' stroke='%23d4af67' stroke-width='0.6' opacity='0.16'/%3E%3C/svg%3E");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid rgba(212, 175, 103, 0.2);
+}
+
+/* Brand Crest */
+.crest {
+  width: 78px;
+  height: 78px;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 8px 18px rgba(212, 175, 103, 0.4));
+  animation: crestGlow 4s ease-in-out infinite alternate;
+}
+
+.crest svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@keyframes crestGlow {
+  0% {
+    filter: drop-shadow(0 6px 14px rgba(212, 175, 103, 0.35));
+  }
+  100% {
+    filter: drop-shadow(0 10px 24px rgba(243, 215, 139, 0.65));
+  }
+}
+
+/* Brand Headings & Texts */
+.eyebrow {
+  font-family: var(--font-serif);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold-bright);
+  margin-bottom: 0.75rem;
+}
+
+.brand-side h1,
+.brand-panel h1 {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, #fff7e6 0%, #f3d78b 45%, #b8893a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.6rem;
+}
+
+.tagline {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 0.16em;
+  color: var(--champagne);
+  margin-bottom: 1.5rem;
+}
+
+/* Decorative Gold Ornament */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1.6rem;
+  width: 100%;
+  max-width: 260px;
+}
+
+.ornament span {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(212, 175, 103, 0.6), transparent);
+}
+
+.ornament span:first-child {
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 103, 0.6));
+}
+
+.ornament i {
+  width: 6px;
+  height: 6px;
+  background: var(--gold-bright);
+  transform: rotate(45deg);
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(243, 215, 139, 0.85);
+}
+
+.brand-copy {
+  font-size: 0.96rem;
+  line-height: 1.65;
+  color: var(--ink-secondary);
+  margin-bottom: 2rem;
+  max-width: 390px;
+}
+
+/* Feature Highlights */
+.highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.highlights li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.92rem;
+  color: #ede2d1;
+  letter-spacing: 0.02em;
+}
+
+.highlights li::before {
+  content: "✦";
+  color: var(--gold-bright);
+  font-size: 0.82rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 5px rgba(243, 215, 139, 0.7));
+}
+
+/* --------------------------------------------------------------------------
+   Right Panel: Staff Portal Form
+   -------------------------------------------------------------------------- */
+.form-side,
+.form-panel {
+  position: relative;
+  padding: 3.8rem 3.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(175deg, #17130f 0%, #0d0b09 100%);
+  color: var(--ivory);
+}
+
+.panel-kicker,
+.panel-label {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.form-side h2,
+.form-header h2 {
+  font-family: var(--font-serif);
+  font-size: 2.1rem;
+  font-weight: 600;
+  color: #fff9ee;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.form-note {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.5;
+  margin-bottom: 2.2rem;
+}
+
+/* Form Structure */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.field label {
+  font-size: 0.84rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ded3bf;
+}
+
+/* Custom Input Shell */
+.input-shell {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: rgba(22, 18, 14, 0.75);
+  border: 1px solid rgba(212, 175, 103, 0.3);
+  border-radius: 8px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-shell:focus-within {
+  border-color: var(--gold-bright);
+  background: rgba(30, 24, 18, 0.95);
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 103, 0.2),
+    0 0 22px rgba(212, 175, 103, 0.15);
+}
+
+.input-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 1.05rem;
+  padding-right: 0.25rem;
+  color: var(--gold);
+  pointer-events: none;
+}
+
+.input-icon svg {
+  width: 19px;
+  height: 19px;
+  fill: currentColor;
+}
+
+.input-shell input {
+  flex: 1;
+  width: 100%;
+  padding: 0.95rem 1rem 0.95rem 0.65rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff9ee;
+  font-family: inherit;
+  font-size: 0.98rem;
+}
+
+.input-shell input::placeholder {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+/* Standalone / Fallback Inputs */
+.password-row {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field > input:not([type="checkbox"]):not([type="radio"]) {
+  width: 100%;
+  padding: 0.95rem 1rem;
+  background: rgba(22, 18, 14, 0.75);
+  border: 1px solid rgba(212, 175, 103, 0.3);
+  border-radius: 8px;
+  outline: none;
+  color: #fff9ee;
+  font-family: inherit;
+  font-size: 0.98rem;
+  transition: all 0.25s ease;
+}
+
+.field > input:focus {
+  border-color: var(--gold-bright);
+  box-shadow: 0 0 0 3px rgba(212, 175, 103, 0.2);
+}
+
+/* Show / Hide Password Button */
+.toggle-password {
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  user-select: none;
+}
+
+.toggle-password:hover {
+  color: var(--gold-bright);
+}
+
+.toggle-password:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Submit Action Button */
+.submit-btn {
+  position: relative;
+  margin-top: 0.8rem;
+  padding: 1.05rem 1.6rem;
+  background: linear-gradient(135deg, #f8e7bb 0%, #d4af67 36%, #f3d78b 70%, #9a732c 100%);
+  background-size: 200% auto;
+  color: #1a140b;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow:
+    0 6px 20px rgba(184, 137, 58, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  overflow: hidden;
+}
+
+.submit-btn:hover {
+  background-position: right center;
+  box-shadow:
+    0 8px 28px rgba(243, 215, 139, 0.48),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+.submit-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 12px rgba(184, 137, 58, 0.3);
+}
+
+.submit-btn:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 3px;
+}
+
+/* Validation & Feedback Messages */
+.field-error {
+  font-size: 0.84rem;
+  color: var(--danger);
+  margin-top: 0.3rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.field-error::before {
+  content: "⚠";
+  font-size: 0.85rem;
+}
+
+.field-error[hidden] {
+  display: none !important;
+}
+
+.status-message {
+  min-height: 24px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-align: center;
+  color: var(--ink-secondary);
+  padding: 0.6rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+}
+
+.status-message:empty {
+  display: none;
+}
+
+.status-message.is-error {
+  color: #ff8e8e;
+  background: var(--danger-bg);
+  border: 1px solid var(--danger-border);
+}
+
+.status-message:not(.is-error):not(:empty) {
+  color: #98e4b8;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+}
+
+/* --------------------------------------------------------------------------
+   Page Footer
+   -------------------------------------------------------------------------- */
+.page-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+}
+
+.page-footer p:first-child {
+  color: var(--muted-light);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Design
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .frame {
+    max-width: 640px;
+  }
+
+  .frame-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .brand-side,
+  .brand-panel {
+    padding: 3rem 2.4rem 2.4rem;
+    border-right: none;
+    border-bottom: 1px solid rgba(212, 175, 103, 0.2);
+    align-items: center;
+    text-align: center;
+  }
+
+  .brand-side h1,
+  .brand-panel h1 {
+    font-size: 2.3rem;
+  }
+
+  .ornament {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .highlights {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .form-side,
+  .form-panel {
+    padding: 2.8rem 2.4rem 3.2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .page {
+    padding: 1.25rem 0.85rem;
+  }
+
+  .frame::before,
+  .frame::after {
+    display: none;
+  }
+
+  .brand-side,
+  .brand-panel {
+    padding: 2.4rem 1.4rem;
+  }
+
+  .brand-side h1,
+  .brand-panel h1 {
+    font-size: 1.95rem;
+  }
+
+  .form-side,
+  .form-panel {
+    padding: 2.2rem 1.4rem 2.6rem;
+  }
+
+  .form-side h2,
+  .form-header h2 {
+    font-size: 1.75rem;
+  }
+}
